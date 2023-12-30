@@ -1,16 +1,12 @@
-#▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒✯ ʑᴇʟᴢᴀʟ_ᴍᴜsɪᴄ ✯▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒
-#▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒✯  T.me/ZThon   ✯▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒
-#▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒✯ T.me/Zelzal_Music ✯▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒
-
-from ZelzalMusic.plugins.play.filters import command
+from MatrixMusic.plugins.play.filters import command
 from pyrogram import filters
 from pyrogram.types import Message
 
-from ZelzalMusic import app
-from ZelzalMusic.core.call import Zelzaly
-from ZelzalMusic.utils.database import is_music_playing, music_on
-from ZelzalMusic.utils.decorators import AdminRightsCheck
-from ZelzalMusic.utils.inline import close_markup
+from MatrixMusic import app
+from MatrixMusic.core.call import Zelzaly
+from MatrixMusic.utils.database import is_music_playing, music_on
+from MatrixMusic.utils.decorators import AdminRightsCheck
+from MatrixMusic.utils.inline import close_markup
 from config import BANNED_USERS
 
 
