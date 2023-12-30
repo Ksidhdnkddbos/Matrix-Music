@@ -18,7 +18,7 @@ from strings import get_string
 
 from ..formatters import int_to_alpha
 
-
+#Ar
 def AdminRightsCheck(mystic):
     async def wrapper(client, message):
         if await is_maintenance() is False:
