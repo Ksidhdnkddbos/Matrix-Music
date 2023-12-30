@@ -9,7 +9,7 @@ from MatrixMusic.utils.decorators import AdminRightsCheck
 from MatrixMusic.utils.inline import close_markup
 from config import BANNED_USERS
 
-
+#comand
 @app.on_message(
     command(["/stop", "اسكت", "انهاء", "ايقاف"]) & ~BANNED_USERS
 )
