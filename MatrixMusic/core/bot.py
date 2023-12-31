@@ -9,7 +9,6 @@ class Zelzaly(Client):
     def __init__(self):
         LOGGER("ميــوزك ماتـركس").info(f"جارِ بدء تشغيل البوت . . .")
         super().__init__(
-            name="MatrixMusic",
             api_id=config.API_ID,
             api_hash=config.API_HASH,
             bot_token=config.BOT_TOKEN,
