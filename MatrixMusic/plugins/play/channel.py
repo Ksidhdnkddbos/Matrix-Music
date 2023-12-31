@@ -1,15 +1,11 @@
-#▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒✯ ʑᴇʟᴢᴀʟ_ᴍᴜsɪᴄ ✯▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒
-#▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒✯  T.me/ZThon   ✯▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒
-#▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒✯ T.me/Zelzal_Music ✯▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒
-
-from ZelzalMusic.plugins.play.filters import command
+from MatrixMusic.plugins.play.filters import command
 from pyrogram import filters
 from pyrogram.enums import ChatMembersFilter, ChatMemberStatus, ChatType
 from pyrogram.types import Message
 
-from ZelzalMusic import app
-from ZelzalMusic.utils.database import set_cmode
-from ZelzalMusic.utils.decorators.admins import AdminActual
+from MatrixMusic import app
+from MatrixMusic.utils.database import set_cmode
+from MatrixMusic.utils.decorators.admins import AdminActual
 from config import BANNED_USERS
 
 
