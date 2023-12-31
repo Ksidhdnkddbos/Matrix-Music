@@ -23,5 +23,4 @@ unidecode
 git+https://github.com/yt-dlp/yt-dlp.git
 yt-dlp
 youtube-search
-git+https://github.com/yt-dlp/yt-dlp.git
 youtube-search-python
