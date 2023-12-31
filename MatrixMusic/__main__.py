@@ -50,7 +50,6 @@ async def init():
         pass
     await Zelzaly.decorators()
     LOGGER("ميــوزك ماتـركس").info("MatrixThon")
-    )
     await idle()
     await app.stop()
     await userbot.stop()
