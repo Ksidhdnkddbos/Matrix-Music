@@ -23,7 +23,7 @@ async def strcall(client, message):
                 mut="⦗ لا يتكلم ⦘"
             user = await client.get_users(participant.user_id)
             k +=1
-            text +=f"{k}:{user.mention}↬ {mut}\n"
+            text +=f"{k}:{user.mention}↬{mut}\n"
         text += f"\n↯︙عدد الاشخاص في المكالمة المرئية ↬ ⦗ {len(participants)} ⦘"    
         await message.reply(f"{text}")
         await asyncio.sleep(5)
