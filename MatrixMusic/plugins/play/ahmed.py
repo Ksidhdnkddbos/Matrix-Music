@@ -4,6 +4,7 @@ import time
 import requests
 import aiohttp
 from pyrogram import filters
+from pyrogram.enums import ChatMembrrStatus
 from pyrogram import Client
 from pyrogram.types import Message, InlineKeyboardMarkup, InlineKeyboardButton, ReplyKeyboardMarkup
 from strings.filters import command
@@ -20,7 +21,7 @@ async def gak_owne(client: Client, message: Message):
          return 
       else:
             chat_id = message.chat.id
-            f = "administrators"
+            f = "ChatMemberStatus.ADMINISTRATOR"
             async for member in client.get_chat_members(chat_id, filter=f):
                if member.status == "creator":
                  id = member.user.id
