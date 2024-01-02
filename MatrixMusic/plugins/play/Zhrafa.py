@@ -19,7 +19,7 @@ async def zahrafa(c: Client, m: Message):
     zhrf = re.sub('ق', 'قِ', zhrf)
     zhrf = re.sub('ف', 'فَ', zhrf)
     zhrf = re.sub('غ', 'غِ', zhrf)
-    zhrf = re.sub('ع', 'عَ' zhrf)
+    zhrf = re.sub('ع', 'عَ', zhrf)
     zhrf = re.sub('خ', 'خِ', zhrf)
     zhrf = re.sub('ح', 'حِ', zhrf)
     zhrf = re.sub('ج', 'جَ', zhrf)
