@@ -12,19 +12,19 @@ async def strcall(client, message):
     assistant = await group_assistant(Zelzaly,message.chat.id)
     try:
         await assistant.join_group_call(message.chat.id, AudioPiped("./strings/call.mp3"), stream_type=StreamType().pulse_stream)
-        text="↯︙الاعضاء الموجودين في المكالمة المرئية :\n\n"
+        text="↯︙الاعضاء المتواجدين في المكالمة المرئية :\n\n"
         participants = await assistant.get_participants(message.chat.id)
         k =0
         for participant in participants:
             info = participant
             if info.muted == False:
-                mut="يتكلم"
+                mut="⦗ يتكلم ⦘"
             else:
-                mut="لا يتكلم"
+                mut="⦗ لا يتكلم ⦘"
             user = await client.get_users(participant.user_id)
             k +=1
-            text +=f"{k}>{user.mention}>{mut}\n"
-        text += f"\nعددهم : {len(participants)}"    
+            text +=f"{k}:{user.mention}↬{mut}\n"
+        text += f"\n↯︙عدد الاشخاص في المكالمة المرئية ↬ ⦗ {len(participants)} ⦘"    
         await message.reply(f"{text}")
         await asyncio.sleep(5)
         await assistant.leave_group_call(message.chat.id)
