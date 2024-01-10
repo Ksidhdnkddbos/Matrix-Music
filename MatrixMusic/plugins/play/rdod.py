@@ -68,8 +68,21 @@ def del_rdod(id) -> bool:
 Programmed by : 🎖️ @RNRYR
    Channel -› • @Matrixthon
 '''
-    
+@app.on_message(filters.regex("^المشرفين$"))
+async def adlist(_, message):
+    chat_id = message.chat.id
+    admin = "- قائمة المشرفين\n— — — — —\n"
+    async for admins in app.get_chat_members(chat_id, filter=enums.ChatMembersFilter.ADMINISTRATORS):
+           admin+=f"› {'@'+admins.user.username if admins.user.username else admins.user.mention} - `{admins.user.id}` .\n"
+    await message.reply(text=(admin))
 
+@matrixpyrogram.on_message(filters.regex("^البوتات$"))
+async def botslist(_, message):
+    chat_id = message.chat.id
+    rnryr = "- قائمة البوتات\n— — — — —\n"
+    async for b in app.get_chat_members(chat_id, filter=enums.ChatMembersFilter.BOTS):
+           rnryr+=f"› {'@'+b.user.username if b.user.username else b.user.mention} - `{b.user.id}` .\n"
+    await message.reply(text=(ahmed))
 '''
 Programmed by : 🎖️ @RNRYR
    Channel -› • @Matrixthon
