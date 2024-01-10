@@ -35,7 +35,7 @@ def gpt(query):
         }
     }
 
-    response = requests.post(api, headers=headers, data=dumps(data))
+    response = requests.post(api, headers=headers, data=json.dumps(data))
     try:
         result = response.json()["result"]["choices"][0]["text"]
         return result
