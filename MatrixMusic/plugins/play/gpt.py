@@ -3,13 +3,22 @@ import json
 from MatrixMusic import app
 from pyrogram import Client
 from pyrogram import filters
+from os import system
+try: from pyrogram import Client, filters
+except ImportError:
+    system('pip install pyrogram tgcrypto')
+    from pyrogram import Client, filters
 from pyrogram.types import Message
-from pyrogram import Client, filters
+try: import requests
+except ImportError:
+    system('pip install requests')
+    import requests
 
 
-url = 'https://us-central1-chat-for-chatgpt.cloudfunctions.net/basicUserRequestBeta'
 
-def gpt(text) -> str:
+api = 'https://us-central1-chat-for-chatgpt.cloudfunctions.net/basicUserRequestBeta'
+
+def gpt(query):
     headers = {
         'Host': 'us-central1-chat-for-chatgpt.cloudfunctions.net',
         'Connection': 'keep-alive',
@@ -22,29 +31,22 @@ def gpt(text) -> str:
 
     data = {
         'data': {
-            'message':text,
+            'message':query,
         }
     }
 
-    response = requests.post(url, headers=headers, data=json.dumps(data))
+    response = requests.post(api, headers=headers, data=dumps(data))
     try:
         result = response.json()["result"]["choices"][0]["text"]
         return result
     except:
         return None
 
-def reply_gpt(client, message):
-    text = message.text.split("/gpt ")[1]
-    reply_text = gpt(text)
-    chat_id = message.chat.id
-    if message.reply_to_message is not None:
-        message_id = message.reply_to_message.message_id
-    else:
-        message_id = None
-    client.send_message(chat_id=chat_id, text=reply_text + "\n\n\n╖ مرحبا عزيزي المستخدم\n╢ لقد تم استخدام احدث اصدار من الذكاء الأصطناعي\n╢ اذا كنت تريد السؤال مجداا فلا تتردد في ذلك \n╜ تم تصميم هذا الكود بواسطة المبرمج اعدام @E3_DM ", reply_to_message_id=message_id)
 
-
-@app.on_message(filters.command("gpt"))
-def reply(client, message):
-    message.reply_text("↯︙تم استلام سؤال لـ ↫ ⦗ سيرفرات هيروكو ⦘")
-    reply_gpt(client, message)
+@app.on_message(filters.command('بوت', ''))
+async def gpt_reply(client, message):
+    wait = await message.reply_text("↯︙تم استلام سؤال لـ ↫ ⦗ سيرفرات هيروكو ⦘", reply_to_message_id = message.id)
+    data = message.text.split(maxsplit=1)
+    if len(data) == 1: return await wait.edit_text('يرجى تحديد سؤال')
+    ai_answer = gpt(data[1])
+    return await wait.edit_text(ai_answer if ai_answer else 'عذرا عزيزي تعذر الرد !')
