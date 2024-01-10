@@ -77,12 +77,12 @@ def get_rdod(chat_id):
        a = line.split("#")[1]
        b = a.split("AHMEDRD")[0]
        text += f"{b}\n"
-   if text == "• الردود بهذه المجموعة : \n": return False
-   else: return f"**{text}**"
-     async def get_rtba(chat_id: int, user_id: int) -> bool:
+    if text == "• الردود بهذه المجموعة : \n": return False
+    else:return f"**{text}**"
+    async def get_rtba(chat_id: int, user_id: int) -> bool:
     get = await matrixpyrogram.get_chat_member(chat_id, user_id)
     if not get.status in [ChatMemberStatus.OWNER, ChatMemberStatus.ADMINISTRATOR]:
-      return False
+    return False
     else: return True
     
 
