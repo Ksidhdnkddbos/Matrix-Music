@@ -1,3 +1,10 @@
+import asyncio
+from pyrogram import Client, filters
+from strings.filters import command
+from pyrogram.types import *
+from MatrixMusic import app
+
+
 def get_rd(text, id):
     chat_id = str(id)
     text = text
