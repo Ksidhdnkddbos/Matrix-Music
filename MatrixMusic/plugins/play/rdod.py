@@ -1,8 +1,9 @@
 import asyncio
-from pyrogram import Client, filters
+from pyrogram import Client, filters ,enums
 from strings.filters import command
 from pyrogram.types import *
 from MatrixMusic import app
+from pyrogram.enums import ChatMemberStatus
 
 
 def get_rd(text, id):
