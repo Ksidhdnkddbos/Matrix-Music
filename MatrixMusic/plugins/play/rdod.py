@@ -125,6 +125,48 @@ async def delrdood(client, message):
 Programmed by : 🎖️ @RNRYR
    Channel -› • @Matrixthon
 '''
+@app.on_message(filters.regex("افتاره"))
+async def her(_, message):
+     user_id = message.reply_to_message.from_user.id
+     d = await app.get_chat(user_id)
+     photo = await app.download_media(d.photo.big_file_id)
+     bio = d.bio
+     if photo:
+        await message.reply_photo(photo,caption=bio)
+     else:
+        await message.reply(bio)
+        
+@app.on_message(filters.regex("افتاري"))
+async def my(_, message):
+     user_id = message.from_user.id
+     b = await app.get_chat(user_id)
+     photo = await app.download_media(b.photo.big_file_id)
+     bio = b.bio
+     if photo:
+        await message.reply_photo(photo,caption=bio)
+     else:
+        await message.reply(bio)
+
+@app.on_message(filters.regex("^نبذتي$"))
+async def Bio(_, message):
+    if not message.reply_to_message:
+     me = message.from_user.id
+     b = await app.get_chat(me)
+     bio = b.bio
+     await message.reply_text(bio)
+	
+@app.on_message(filters.regex("^نبذته$"))
+async def Bio(_, message):
+	if message.reply_to_message:
+		user_id = message.reply_to_message.from_user.id
+		d = await app.get_chat(user_id)
+		bio = d.bio
+		await message.reply_text(bio)
+
+@matrixpyrogram.on_message(filters.regex("قول"))
+async def echo(_, msg):
+ text = msg.text.split(None, 1)[1]
+ await msg.reply(text)
 
 '''
 Programmed by : 🎖️ @RNRYR
