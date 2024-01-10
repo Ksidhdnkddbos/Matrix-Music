@@ -4,7 +4,7 @@ from strings.filters import command
 from pyrogram.types import *
 from MatrixMusic import app
 from pyrogram.enums import ChatMemberStatus
-
+from pyrogram.enums import ParseMode, ChatMemberStatus
 
 def get_rd(text, id):
     chat_id = str(id)
