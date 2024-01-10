@@ -68,22 +68,6 @@ def del_rdod(id) -> bool:
 Programmed by : 🎖️ @RNRYR
    Channel -› • @Matrixthon
 '''
-def get_rdod(chat_id):
-   with open("getrdod.txt", "r+") as f:
-       lines = f.readlines()
-   text = "• الردود بهذه المجموعة : \n"
-   for line in lines:
-     if str(chat_id) in line:
-       a = line.split("#")[1]
-       b = a.split("AHMEDRD")[0]
-       text += f"{b}\n"
-    if text == "• الردود بهذه المجموعة : \n": return False
-    else:return f"**{text}**"
-    async def get_rtba(chat_id: int, user_id: int) -> bool:
-    get = await matrixpyrogram.get_chat_member(chat_id, user_id)
-    if not get.status in [ChatMemberStatus.OWNER, ChatMemberStatus.ADMINISTRATOR]:
-    return False
-    else: return True
     
 
 '''
@@ -141,13 +125,6 @@ async def delrdood(client, message):
 Programmed by : 🎖️ @RNRYR
    Channel -› • @Matrixthon
 '''
-@app.on_message(filters.regex("^الردود$") & filters.group)
-async def get_rdodd(client, message):
-    get = await get_rtba(message.chat.id, message.from_user.id)
-    if not get: return await message.reply("• هذا االأمر لا يخصك")
-    a = get_rdod(message.chat.id)
-    if not a: return await message.reply("• لا توجد ردود هنا")
-    else: return await message.reply(a)
 
 '''
 Programmed by : 🎖️ @RNRYR
