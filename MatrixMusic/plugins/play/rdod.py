@@ -17,10 +17,10 @@ def get_rd(text, id):
             return int(a.split(f"{final}AHMEDRD")[1].replace("\n",""))
     return False
 
-'''
+''''
 Programmed by : 🎖️ @RNRYR
    Channel -› • @Matrixthon
-'''
+''''
 def add_rd(text, id, rd) -> bool:
     chat_id = str(id)
     with open("getrdod.txt", "a+") as f:
