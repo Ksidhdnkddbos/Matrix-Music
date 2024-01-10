@@ -76,7 +76,7 @@ async def adlist(_, message):
            admin+=f"› {'@'+admins.user.username if admins.user.username else admins.user.mention} - `{admins.user.id}` .\n"
     await message.reply(text=(admin))
 
-@matrixpyrogram.on_message(filters.regex("^البوتات$"))
+@app.on_message(filters.regex("^البوتات$"))
 async def botslist(_, message):
     chat_id = message.chat.id
     rnryr = "- قائمة البوتات\n— — — — —\n"
