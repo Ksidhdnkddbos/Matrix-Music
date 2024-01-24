@@ -99,10 +99,8 @@ async def huhh(client: Client, message: Message):
 
     )
 
-@app.on_message(
-    command(["تخ"])
-)
-async def huhh(client: Client, message: Message):
+@app.on_message(command(["تخ"]) & filters.group)
+async def huhh(client, message):
     await message.reply_animation(
         animation=f"https://telegra.ph/file/5a18fe591860a8a98f39f.mp4",
         caption=f"""↯︙قتل ↫ {message.from_user.mention}\nالضحيه دا 😢 ↫ {message.from_id.first_name}\nانا لله وانـا اليـه راجعـون 😢😢""",
