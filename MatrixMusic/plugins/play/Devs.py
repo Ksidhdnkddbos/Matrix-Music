@@ -98,3 +98,24 @@ async def huhh(client: Client, message: Message):
         ),
 
     )
+
+@app.on_message(
+    command(["تخ"])
+)
+async def huhh(client: Client, message: Message):
+    await message.reply_animation(
+        animation=f"https://telegra.ph/file/5a18fe591860a8a98f39f.mp4",
+        caption=f"""↯︙قتل ↫ {message.from_user.mention}\nالضحيه دا 😢 ↫ {message.from_id.first_name}\nانا لله وانـا اليـه راجعـون 😢😢""",
+        reply_markup=InlineKeyboardMarkup(
+            [
+                [
+                    InlineKeyboardButton(
+                        "المقتول 🔪", url=f"{message.from_id.first_name}"),
+                ],[
+                    InlineKeyboardButton(
+                        "‹ : 𝖬𝖺𝖳𝗋𝗂x 𝖳𝖾𝖠𝗆 : ›", url=f"https://t.me/XMATTMX"),
+                ],
+
+            ]
+
+        ),
