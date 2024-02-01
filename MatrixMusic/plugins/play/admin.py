@@ -1,6 +1,5 @@
 import asyncio
 
-from config import get_bot_information
 from database import del_db_admin, del_db_constractors, del_db_manager, del_db_special, set_db_ban, del_db_ban, \
     get_db_ban, get_db_mute, set_db_mute, del_db_mute
 from pyrogram import Client
