@@ -1,5 +1,5 @@
 from database import get_db_constractors, get_db_manager, get_db_admin, get_db_special, get_db_general_rtb
-from config import sudoers, developer
+from config import developer
 
 
 def sudo(m):
