@@ -350,7 +350,7 @@ async def get_Rank_ana_meen(m):
             leader = "Dev² 🎖"
         else:
             if sudo(m):
-                leader "مطور اساسي"
+                leader = "مطور اساسي"
             else:
                 if secsudo(m):
                     leader = "مطور ثانوي"
