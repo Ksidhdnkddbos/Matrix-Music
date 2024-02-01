@@ -88,6 +88,7 @@ confirmer = {}
 disabled_plugins = []
 get_bot_information = []
 sudoers = []
+backup_file = []
 developer = []
 command = ["/"]
 
