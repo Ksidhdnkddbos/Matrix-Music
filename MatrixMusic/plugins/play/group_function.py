@@ -2187,7 +2187,7 @@ async def basegroup(c: Client, m: Message):
                                reply_to_message_id=m.message_id)
             return
 
-    if m.text == "id" or m.text == "ايدي" or m.text == "ا" or m.text == "ايدي"
+    if m.text == "id" or m.text == "ايدي" or m.text == "ا" or m.text == "ايدي":
         if lock_idgroup_open(m):
             await m.reply_text("↯︙الايدي مقفول اطلب من الادمن \n↯", reply_to_message_id=m.message_id)
             return
