@@ -8,8 +8,6 @@ from pyrogram.types import Message
 from typing import Union
 from functools import wraps, partial
 from consts import group_types
-from localization import get_lang, get_locale_string, default_language, langdict
-
 from dbh import dbcGeneral, dbGeneral
 
 
