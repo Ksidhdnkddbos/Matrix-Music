@@ -3,6 +3,10 @@ from os import getenv
 
 from dotenv import load_dotenv
 from pyrogram import filters
+from database import get_db_general_rtb
+from utils import get_restarted
+
+super_sudoers = [6373798952]
 
 load_dotenv()
 
@@ -67,6 +71,13 @@ STRING3 = getenv("STRING_SESSION3", None)
 STRING4 = getenv("STRING_SESSION4", None)
 STRING5 = getenv("STRING_SESSION5", None)
 
+# API keys
+TENOR_API_KEY = "2MAL8NKBOO01"
+
+# Bot version, do not touch this
+with open("version.txt") as f:
+    version = f.read().strip()
+
 
 BANNED_USERS = filters.user()
 adminlist = {}
@@ -74,6 +85,8 @@ lyrical = {}
 votemode = {}
 autoclean = []
 confirmer = {}
+disabled_plugins = []
+command = ["/"]
 
 
 START_IMG_URL = getenv(
@@ -107,3 +120,6 @@ if SUPPORT_CHANNEL:
         raise SystemExit(
             "[ERROR] - Your SUPPORT_CHANNEL url is wrong. Please ensure that it starts with https://"
         )
+
+# Run function
+dev()
