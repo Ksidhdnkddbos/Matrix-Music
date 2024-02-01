@@ -2171,7 +2171,6 @@ async def basegroup(c: Client, m: Message):
             last_name = ""
         await m.reply_text(first_name + "\n" + last_name, reply_to_message_id=m.message_id, parse_mode="Markdown")
         return
-
     if m.text == "فتح الايدي":
         if admin(m):
             await lock_idgroup_open(m)
@@ -2188,22 +2187,13 @@ async def basegroup(c: Client, m: Message):
                                reply_to_message_id=m.message_id)
             return
 
-    if m.text == "id" or m.text == "ايدي" or m.text == "ا" or m.text == "ايدي":
+    if m.text == "id" or m.text == "ايدي" or m.text == "ا" or m.text == "ايدي"
         if lock_idgroup_open(m):
             await m.reply_text("↯︙الايدي مقفول اطلب من الادمن \n↯", reply_to_message_id=m.message_id)
             return
         await ids(c, m)
         return
 
-    if m.text == "id" or m.text == "ايدي" or m.text == "ا" or m.text == "ايدي" or m.text == "id":
-    if lock_idgroup_close(m):
-    usr = await client.get_chat(message.from_user.id)
-    name = usr.first_name
-    photo = await app.download_media(usr.photo.big_file_id)
-            await m.reply_text("↯︙الاسم ↫ ⦗ [{m.reply_to_message.from_user.first_name}](tg://user?id={m.reply_to_message.from_user.id}) ⦘\n↯︙الايدي ↫  ⦗ `{m.reply_to_message.from_user.id}` ⦘\n↯︙المعرف ↫ ⦗ {username} ⦘\n↯︙الرتبه ↫ ⦗ {await get_Rankkk(m.reply_to_message.from_user.id, m)} ⦘", reply_to_message_id=m.message_id)
-            return
-        await ids(c, m)
-        return
 
     if m.text == "تعيين الايدي" or m.text == "تعين الايدي":
         if constractors(m):
