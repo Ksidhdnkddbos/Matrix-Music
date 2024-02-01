@@ -40,25 +40,6 @@ def get_db_lang(chat_id: int, chat_type: str) -> str:
     return ul[0] if ul else None
 
 
-def cache_localizations(files: List[str]) -> Dict[str, Dict[str, Dict[str, str]]]:
-    ldict = {lang: {} for lang in enabled_locales}
-    for file in files:
-        _, lname, pname = file.split(os.path.sep)
-        pname = pname.split(".")[0]
-        dic = json.load(open(file, encoding="utf-8"))
-        dic.update(ldict[lname].get(pname, {}))
-        ldict[lname][pname] = dic
-    return ldict
-
-
-jsons: List[str] = []
-
-for locale in enabled_locales:
-    jsons += glob(os.path.join("locales", locale, "*.json"))
-
-langdict = cache_localizations(jsons)
-
-
 def get_locale_string(dic: dict, language: str, default_context: str, key: str, context: str = None) -> str:
     if context:
         default_context = context
@@ -74,22 +55,6 @@ def get_lang(message) -> str:
         chat = message.chat
 
     lang = get_db_lang(chat.id, chat.type)
-
-    if chat.type == "private":
-        lang = lang or message.from_user.language_code or default_language
-    else:
-        lang = lang or default_language
-    # User has a language_code without hyphen
-    if len(lang.split("-")) == 1:
-        # Try to find a language that starts with the provided language_code
-        for locale_ in enabled_locales:
-            if locale_.startswith(lang):
-                lang = locale_
-    elif lang.split("-")[1].islower():
-        lang = lang.split("-")
-        lang[1] = lang[1].upper()
-        lang = "-".join(lang)
-    return lang if lang in enabled_locales else default_language
 
 
 def use_chat_lang(context=None):
