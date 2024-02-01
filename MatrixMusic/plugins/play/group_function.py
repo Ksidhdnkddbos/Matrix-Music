@@ -2196,7 +2196,7 @@ async def basegroup(c: Client, m: Message):
         return
 
     if m.text == "id" or m.text == "ايدي" or m.text == "ا" or m.text == "ايدي" or m.text == "id":
-        if lock_idgroup_close(m):
+    if lock_idgroup_close(m):
     usr = await client.get_chat(message.from_user.id)
     name = usr.first_name
     photo = await app.download_media(usr.photo.big_file_id)
