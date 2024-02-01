@@ -3,7 +3,7 @@ import re
 import requests
 from pyrogram import Client, filters
 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton, Message, CallbackQuery
-from config import BOT_TOKEN, get_bot_information
+from config import BOT_TOKEN
 from database import set_db_waitg, get_db_waitg, del_db_waitg, set_db_mypointgame
 from MatrixMusic.plugins.play.general import waitg_test
 from MatrixMusic.plugins.play.locks import lock_games_test, set_db_wait, lock_myphoto_test
