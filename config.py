@@ -86,6 +86,8 @@ votemode = {}
 autoclean = []
 confirmer = {}
 disabled_plugins = []
+get_bot_information = []
+sudoers = []
 developer = []
 command = ["/"]
 
