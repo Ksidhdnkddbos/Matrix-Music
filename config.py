@@ -86,11 +86,7 @@ votemode = {}
 autoclean = []
 confirmer = {}
 disabled_plugins = []
-sudoers = [data['idSudo']]
-sudoers += super_sudoers
 developer = []
-developer += sudoers
-f.close()
 command = ["/"]
 
 
