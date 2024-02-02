@@ -1,6 +1,5 @@
 import os
 from pyrogram.errors import RPCError
-from backup_file import get_backup, upper_backup
 from config import super_sudoers, BOT_TOKEN
 from MatrixMusic.plugins.play.abrag import abrag
 from MatrixMusic.plugins.play.antiflood import MessagesAntiFlood
