@@ -1,7 +1,6 @@
 import os
 from pyrogram.errors import RPCError
 from config import super_sudoers, BOT_TOKEN
-from MatrixMusic.plugins.play.commands import command
 from MatrixMusic.plugins.play.games import games
 from MatrixMusic.plugins.play.general import *
 from MatrixMusic.plugins.play.developer import *
