@@ -1,13 +1,15 @@
-import os
-from pyrogram.errors import RPCError
-from config import super_sudoers, BOT_TOKEN
-from MatrixMusic.plugins.play.games import games
-from MatrixMusic.plugins.play.general import *
-from MatrixMusic.plugins.play.developer import *
-from MatrixMusic.plugins.play.group_rtb import *
-from MatrixMusic.plugins.play.rtp_function import *
-import re
-import datetime
+import os
+from pyrogram.errors import RPCError
+from config import super_sudoers, BOT_TOKEN
+from MatrixMusic.plugins.play.games import games
+from MatrixMusic.plugins.play.general import *
+from MatrixMusic.plugins.play.developer import *
+from MatrixMusic.plugins.play.group_rtb import *
+from MatrixMusic.plugins.play.rtp_function import *
+import re
+import datetime
+
+
 
 
 ########################################################################################################################
@@ -165,11 +167,21 @@ async def basegroup(c: Client, m: Message):
                 else:
                     botname = get_db_botname()
                 x = f"""
-• أهلاً بك عزيزي انا بوت اسمي  {botname}
-• اختصاص البوت حماية المجموعات
-• اضف البوت الى مجموعتك .
-• ارفعه ادمن مشرف
-• ارفعه مشرف وارسل تفعيل ليتم تفعيل المجموعة .
+• أهلاً بك عزيزي انا بوت اسمي  {botname}
+
+
+• اختصاص البوت حماية المجموعات
+
+
+• اضف البوت الى مجموعتك .
+
+
+• ارفعه ادمن مشرف
+
+
+• ارفعه مشرف وارسل تفعيل ليتم تفعيل المجموعة .
+
+
                                         """
                 keyboard = InlineKeyboardMarkup(inline_keyboard=[
                     [InlineKeyboardButton("‹ 𝖳𝖾𝖠𝗆 𝖬𝖺𝖳𝗋𝗂x ›",
@@ -2129,23 +2141,57 @@ async def basegroup(c: Client, m: Message):
 
     if m.text == "تعيين الايدي" or m.text == "تعين الايدي":
         if constractors(m):
-            id = """
-↯︙ارسل الان النص
-↯︙يمكنك اضافه :
-↯︙`#rdphoto` ↫ تعليق الصوره
-↯︙`#fname` ↫ الاسم الاول 
-↯︙`#lname` ↫ الاسم الاخير 
-↯︙`#id` ↫ ايدي 
-↯︙`#user` ↫ المعرف 
-↯︙`#mention` ↫ اسم الشخص بمنشن 
-↯︙`#game` ↫ نقاطك 
-↯︙`#msgs` ↫ رسائلك 
-↯︙`#contact` ↫ جهاتك 
-↯︙`#auto` ↫ تفاعلك 
-↯︙`#brank` ↫ رتبتك فى البوت 
-↯︙`#grank` ↫ رتبتك فى القروب 
-↯︙`#gmsgs` ↫ عدد رسائل القروب 
-"""
+            id = """
+
+
+↯︙ارسل الان النص
+
+
+↯︙يمكنك اضافه :
+
+
+↯︙`#rdphoto` ↫ تعليق الصوره
+
+
+↯︙`#fname` ↫ الاسم الاول 
+
+
+↯︙`#lname` ↫ الاسم الاخير 
+
+
+↯︙`#id` ↫ ايدي 
+
+
+↯︙`#user` ↫ المعرف 
+
+
+↯︙`#mention` ↫ اسم الشخص بمنشن 
+
+
+↯︙`#game` ↫ نقاطك 
+
+
+↯︙`#msgs` ↫ رسائلك 
+
+
+↯︙`#contact` ↫ جهاتك 
+
+
+↯︙`#auto` ↫ تفاعلك 
+
+
+↯︙`#brank` ↫ رتبتك فى البوت 
+
+
+↯︙`#grank` ↫ رتبتك فى القروب 
+
+
+↯︙`#gmsgs` ↫ عدد رسائل القروب 
+
+
+"""
+
+
             set_db_wait("addcustomid", m.from_user.id, m.chat.id)
             await m.reply_text(id,reply_to_message_id=m.message_id, parse_mode="Markdown")
             return
@@ -2180,11 +2226,21 @@ async def basegroup(c: Client, m: Message):
             else:
                 username = f"@{m.reply_to_message.from_user.username}"
             textmessage = f"""
-↯︙الاسم ↫ ⦗ [{m.reply_to_message.from_user.first_name}](tg://user?id={m.reply_to_message.from_user.id}) ⦘
-↯︙الايدي ↫  ⦗ `{m.reply_to_message.from_user.id}` ⦘
-↯︙المعرف ↫ ⦗ {username} ⦘
-↯︙الرتبه ↫ ⦗ {await get_Rankkk(m.reply_to_message.from_user.id, m)} ⦘
-↯︙نوع الكشف ↫ ⦗ كشف بالرد ⦘
+↯︙الاسم ↫ ⦗ [{m.reply_to_message.from_user.first_name}](tg://user?id={m.reply_to_message.from_user.id}) ⦘
+
+
+↯︙الايدي ↫  ⦗ `{m.reply_to_message.from_user.id}` ⦘
+
+
+↯︙المعرف ↫ ⦗ {username} ⦘
+
+
+↯︙الرتبه ↫ ⦗ {await get_Rankkk(m.reply_to_message.from_user.id, m)} ⦘
+
+
+↯︙نوع الكشف ↫ ⦗ كشف بالرد ⦘
+
+
             """
             await m.reply_text(textmessage, reply_to_message_id=m.message_id, parse_mode="Markdown")
         else:
@@ -2199,11 +2255,21 @@ async def basegroup(c: Client, m: Message):
             chat_name_foruser = result[1]
             chat_username_foruser = result[2]
             textmessage = f"""
-↯︙الاسم ↫ ⦗ [{chat_name_foruser}(tg://user?id={chat_id_foruser}) ⦘
-↯︙الايدي ↫ ⦗ `{chat_id_foruser}` ⦘
-↯︙المعرف ↫  ⦗ {chat_username_foruser} ⦘
-↯︙الرتبه ↫ ⦗ {await get_Rankkk(chat_id_foruser,m)} ⦘
-↯︙نوع الكشف ↫ ⦗ كشف بالمعرف ⦘
+↯︙الاسم ↫ ⦗ [{chat_name_foruser}(tg://user?id={chat_id_foruser}) ⦘
+
+
+↯︙الايدي ↫ ⦗ `{chat_id_foruser}` ⦘
+
+
+↯︙المعرف ↫  ⦗ {chat_username_foruser} ⦘
+
+
+↯︙الرتبه ↫ ⦗ {await get_Rankkk(chat_id_foruser,m)} ⦘
+
+
+↯︙نوع الكشف ↫ ⦗ كشف بالمعرف ⦘
+
+
                     """
             await m.reply_text(textmessage, reply_to_message_id=m.message_id, parse_mode="Markdown")
         else:
@@ -2812,7 +2878,9 @@ async def basegroup(c: Client, m: Message):
                 await youtube_main(c, m)
                 return
             else:
-                await m.reply_text("↯︙عذرا اليوتيوب فى الصيانه حاليا ⚠️", reply_to_message_id=m.message_id)
+                await m.reply_text("↯︙عذرا اليوتيوب فى الصيانه حاليا ⚠️", reply_to_message_id=m.message_id)
+
+
                 return
 
     if m.text == "فتح اليوتيوب":
