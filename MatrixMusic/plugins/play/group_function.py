@@ -13,34 +13,6 @@ import datetime
 ########################################################################################################################
 ########################################################################################################################
 
-@Client.on_message(filters.group & ~filters.regex(f"^@{get_bot_information()[1]}"))
-async def basegroup(c: Client, m: Message):
-
-    if ban_global_test(m):
-        try:
-            check = await get_available_adminstrator(c, m)
-            if check[0]:
-                await m.delete()
-                return
-            await c.kick_chat_member(m.chat.id, m.from_user.id)
-            await m.delete()
-            return
-        except Exception as e:
-            print("ban global test " + str(e))
-
-    if mute_global_test(m):
-        try:
-            check = await get_available_adminstrator(c, m)
-            if check[0]:
-                await m.delete()
-                return
-            await m.delete()
-            await c.restrict_chat_member(m.chat.id, m.from_user.id,
-                                         ChatPermissions())
-            return
-        except Exception as e:
-            print("mute global test " + str(e))
-
     if replay_global_test(m):
         if await lock_lockreply_test(m):
             for rp in get_db_greply():
