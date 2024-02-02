@@ -1,35 +1,13 @@
 import os
 from pyrogram.errors import RPCError
 from config import super_sudoers, BOT_TOKEN
-from MatrixMusic.plugins.play.abrag import abrag
-from MatrixMusic.plugins.play.antiflood import MessagesAntiFlood
-from MatrixMusic.plugins.play.azkar import *
-from MatrixMusic.plugins.play.admin import *
-from MatrixMusic.plugins.play.aflam import aflamAR
-from MatrixMusic.plugins.play.cartoon import cartoon
 from MatrixMusic.plugins.play.commands import command
-from MatrixMusic.plugins.play.destroy_group import destroy_all_group
 from MatrixMusic.plugins.play.games import games
 from MatrixMusic.plugins.play.general import *
 from MatrixMusic.plugins.play.developer import *
 from MatrixMusic.plugins.play.group_rtb import *
-from MatrixMusic.plugins.play.hals import *
-from MatrixMusic.plugins.play.ids import ids, get_mypoint, get_mymessage, get_mycontact
-from MatrixMusic.plugins.play.keyboard_private import lock_lockbroadcast_test, get_num_for_user_and_group, lock_lockgenyoutube_test
-from MatrixMusic.plugins.play.locks import *
-from MatrixMusic.plugins.play.music import music
-from MatrixMusic.plugins.play.quran import *
-from MatrixMusic.plugins.play.ghnely import *
-from MatrixMusic.plugins.play.reply import *
 from MatrixMusic.plugins.play.rtp_function import *
 import re
-from MatrixMusic.plugins.play.rwayat import rwaiat
-from MatrixMusic.plugins.play.sudos import del_message, restart
-from MatrixMusic.plugins.play.tag import tagalluser, tagalluserofallgroup, mentionallgroup, stopmentionallgroup
-from MatrixMusic.plugins.play.wait import wait_all
-from MatrixMusic.plugins.play.weather import weather
-from MatrixMusic.plugins.play.welcome_bye_laws import lock_lockbye_open, lock_lockbye_close, lock_lockbye_test
-from MatrixMusic.plugins.play.youtube import youtube_main
 import datetime
 
 
