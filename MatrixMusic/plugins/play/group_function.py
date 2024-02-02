@@ -15,7 +15,7 @@ import datetime
 ########################################################################################################################
 ########################################################################################################################
 
-    if replay_global_test(m):
+        if replay_global_test(m):
         if await lock_lockreply_test(m):
             for rp in get_db_greply():
                 if m.text == rp[0]:
@@ -49,7 +49,7 @@ import datetime
                                             else:
                                                 await m.reply_text(rp[1], parse_mode="Markdown")
 
-    if replay_group_test(m):
+        if replay_group_test(m):
         for rp in get_db_replygroup(m.chat.id):
             if m.text == rp[0]:
                 if re.findall("\.png$", rp[1]):
