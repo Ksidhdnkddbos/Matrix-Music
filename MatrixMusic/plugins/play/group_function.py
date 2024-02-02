@@ -15,7 +15,10 @@ import datetime
 ########################################################################################################################
 ########################################################################################################################
 
-@Client.on_message(filters.group & ~filters.regex(f"^@{get_bot_information()[1]}"))
+@Client.on_message(filters.group & ~filters.regex(
+    "^@"
+    f"{get_bot_information()[1]}"
+)
 async def basegroup(c: Client, m: Message):
 
     if ban_global_test(m):
