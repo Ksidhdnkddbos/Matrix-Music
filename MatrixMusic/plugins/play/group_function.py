@@ -17,7 +17,7 @@ import datetime
 ########################################################################################################################
 ########################################################################################################################
 
-    if m.text == "تفعيل":
+        if m.text == "تفعيل":
         try:
             check = await get_available_adminstrator(c, m)
             if check[1]:
@@ -29,7 +29,7 @@ import datetime
         except Exception as e:
             print("confirm_group " + str(e))
 
-    if m.text == "تعطيل":
+        if m.text == "تعطيل":
         if sudo2(m):
             await unconfirm_group(c, m)
             return
@@ -45,7 +45,7 @@ import datetime
 ########################################################################################################################
 ########################################################################################################################
 
-    if addcommand_group_test(m):
+        if addcommand_group_test(m):
         for rp in get_db_addcommand(m.chat.id):
             if m.text == rp[1]:
                 m.text = rp[0]
