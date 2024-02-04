@@ -941,7 +941,20 @@ async def piggame(c: Client, m: CallbackQuery):
                                         f"{m.from_user.first_name}](tg://user?id={m.from_user.id})",
                                 parse_mode="Markdown")
 
+    if m.text == "فتح الالعاب":
+    if admin(m):
+    await lock_games_open(m)
+    else:
+    await m.reply_text("↯︙يجب ان تكون برتبه ادمن على الاقل لاستخدام هذا الامر\n↯",
+                               reply_to_message_id=m.message_id)
+    return
 
+    if m.text == "قفل الالعاب":
+    if admin(m):
+    await lock_games_close(m)
+    else:
+    await m.reply_text("↯︙يجب ان تكون برتبه ادمن على الاقل لاستخدام هذا الامر\n↯",
+    reply_to_message_id=m.message_id)
+    return
 
-
-                             
+    await games(c, m)
