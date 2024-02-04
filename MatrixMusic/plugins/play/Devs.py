@@ -106,6 +106,7 @@ async def huhh(client, message):
     in_id = int(caption.split("in")[-1])
     to_url = f"tg://openmessage?user_id={to_id}"
     from_url = f"tg://openmessage?user_id={from_id}"
+    caption = message.text
     await message.reply_animation(
         animation=f"https://telegra.ph/file/5a18fe591860a8a98f39f.mp4",
         caption=f"""↯︙قتل ↫ ⦗ {app.get_chat(to_id).first_name}]({to_url}) ⦘\nالضحيه دا 😢 ↫ ⦗ [{app.get_chat(from_id).first_name}]({from_url}) ⦘\nانا لله وانـا اليـه راجعـون 😢😢""",
