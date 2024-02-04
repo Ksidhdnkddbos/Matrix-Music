@@ -954,5 +954,3 @@ async def piggame(c: Client, m: CallbackQuery):
         await m.reply_text("↯︙تم تعطيل الالعاب بنجاح .",
                            reply_to_message_id=m.message_id)
         return
-
-await games(c, m)
