@@ -101,17 +101,19 @@ async def huhh(client: Client, message: Message):
 
 @app.on_message(command(["تخ"]) & filters.group)
 async def huhh(client, message):
+    to_id = int(matrix_ids.split("to")[-1].split("in")[0])
+    from_id = int(matrix_ids.split("matrix")[-1].split("to")[0])
+    in_id = int(matrix_ids.split("in")[-1])
+    to_url = f"tg://openmessage?user_id={to_id}"
+    from_url = f"tg://openmessage?user_id={from_id}"
     await message.reply_animation(
         animation=f"https://telegra.ph/file/5a18fe591860a8a98f39f.mp4",
-        caption=f"""↯︙قتل ↫ {message.from_user.mention}\nالضحيه دا 😢 ↫ {message.reply_to_message.first_name}\nانا لله وانـا اليـه راجعـون 😢😢""",
+        caption=f"""↯︙قتل ↫ ⦗ {app.get_chat(to_id).first_name}]({to_url}) ⦘\nالضحيه دا 😢 ↫ ⦗ [{app.get_chat(from_id).first_name}]({from_url}) ⦘\nانا لله وانـا اليـه راجعـون 😢😢""",
     )
     reply_markup=InlineKeyboardMarkup(
 
        [
            [
-               InlineKeyboardButton(
-                   "المقتول 🔪", url=f"https://t.me/XMATTMX"),
-           ],[
                InlineKeyboardButton(
                    "‹ : 𝖬𝖺𝖳𝗋𝗂x 𝖳𝖾𝖠𝗆 : ›", url=f"https://t.me/XMATTMX"),
            ],
