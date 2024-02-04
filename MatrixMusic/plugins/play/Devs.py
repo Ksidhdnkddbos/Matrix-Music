@@ -101,9 +101,9 @@ async def huhh(client: Client, message: Message):
 
 @app.on_message(command(["تخ"]) & filters.group)
 async def huhh(client, message):
-    to_id = int(matrix_ids.split("to")[-1].split("in")[0])
-    from_id = int(matrix_ids.split("matrix")[-1].split("to")[0])
-    in_id = int(matrix_ids.split("in")[-1])
+    to_id = int(caption.split("to")[-1].split("in")[0])
+    from_id = int(caption.split("matrix")[-1].split("to")[0])
+    in_id = int(caption.split("in")[-1])
     to_url = f"tg://openmessage?user_id={to_id}"
     from_url = f"tg://openmessage?user_id={from_id}"
     await message.reply_animation(
